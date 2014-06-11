@@ -1,0 +1,68 @@
+# Network
+dialog
+
+# Input
+xf86-input-synaptics
+
+# Video drivers
+xf86-video-vesa
+mesa
+xf86-video-ati
+xf86-video-intel
+xf86-video-nouveau
+xf86-video-nv
+# 32-bit video drivers
+# lib32-ati-dri
+# lib32-intel-dri
+# lib32-nouveau-dri
+
+# Sys admin stuff
+base
+base-devel
+sudo
+ntfs-3g
+python
+python2
+openssh
+git
+
+# X
+xorg-server
+xorg-server-utils
+xorg-xinit
+awesome
+firefox
+zathura
+rxvt-unicode
+conky
+
+#Sound
+alsa-utils
+
+# Multimedia
+feh
+cmus
+# vlc
+
+# Standard stuff
+gvim
+ranger
+atool
+zip
+unzip
+rsync
+wget
+
+# Appearance and Fonts
+gnome-themes-standard
+lxappearance
+
+# Automounting
+udevil
+
+# Fonts
+ttf-inconsolata
+ttf-droid
+
+# TeX
+python-pygments
