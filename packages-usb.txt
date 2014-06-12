@@ -36,6 +36,11 @@ zathura
 rxvt-unicode
 conky
 
+# Encryption
+gnupg
+truecrypt
+encfs
+
 #Sound
 alsa-utils
 

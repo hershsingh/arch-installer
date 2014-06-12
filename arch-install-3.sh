@@ -23,8 +23,13 @@ echo
 AIS_USER=hersh
 echo Adding user $AIS_USER...
 useradd -m -G wheel -s /bin/bash $AIS_USER
-echo Setting the password for this user...
+echo Please enter a password for this user...
 passwd $AIS_USER
+
+## Switch to $AIS_USER
+## Setup the dotfiles from a github repository
+echo Switching to user $AIS_USER...
+su hersh -c 'cd $HOME && git clone https://github.com/hershsingh/dotfiles.git && $HOME/dotfiles/bootstrap.sh'
 
 # Copy the dotfiles now...
 # ranger
@@ -44,10 +49,12 @@ passwd $AIS_USER
 #   xmodmap
 
 # AUR
-curl aur.sh > aur.sh
-chmod +x aur.sh
-# powerline-fonts-git
-#  
+ai-aur() {
+    curl aur.sh > aur.sh
+    chmod +x aur.sh
+    # powerline-fonts-git
+    #  
+}
 
 # Mounting Internal Partitions
 # User needs to be in the 'disk' groups
@@ -62,23 +69,25 @@ mount_internal_ntfs_partition() {
 # TexLive Network Install
 # Remember that you need to be sudo to install this
 # The idea is to do a minimal install on a USB drive
-wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-if [ ! -d install-tl ]; then 
-    mkdir -p install-tl && tar -C install-tl --strip-components=1 -xvzf install-tl-unx.tar.gz 
-    cd install-tl
-    ./install-tl -profile $DOTFILES/texlive.profile
-    # Check if PATH variable is set
-    if [[ ":$PATH:" == *":/usr/local/texlive/2013/bin/i386-linux:"* ]]; then
-        export PATH=$PATH:/usr/local/texlive/2013/bin/i386-linux 
-        echo 'Please add PATH=$PATH:/usr/local/texlive/2013/bin/i386-linux to your .bashrc' 
-    fi
-    # Install base LaTeX
-    tlmgr install latex latex-bin latexconfig latex-fonts
+ai-texliveinstall() {
+    wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+    if [ ! -d install-tl ]; then 
+        mkdir -p install-tl && tar -C install-tl --strip-components=1 -xvzf install-tl-unx.tar.gz 
+        cd install-tl
+        ./install-tl -profile $DOTFILES/texlive.profile
+        # Check if PATH variable is set
+        if [[ ! ":$PATH:" == *":/usr/local/texlive/2013/bin/i386-linux:"* ]]; then
+            export PATH=$PATH:/usr/local/texlive/2013/bin/i386-linux 
+            echo 'Please add PATH=$PATH:/usr/local/texlive/2013/bin/i386-linux to your .bashrc' 
+        fi
+        # Install base LaTeX
+        tlmgr install latex latex-bin latexconfig latex-fonts
 
-    # Install some interesting packages
-    tlmgr install amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls 
-    
-    # Minted Package, requireds python2-pygments
-    tlmgr install minted fancyvrb float ifplatform
-fi
+        # Install some interesting packages
+        tlmgr install amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls 
+        
+        # Minted Package, requireds python2-pygments
+        tlmgr install minted fancyvrb float ifplatform
+    fi
+}
 
