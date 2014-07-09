@@ -11,8 +11,8 @@
 ## Preamble
 # Define colors for 'tput'
 textrev=$(tput rev)
-textblue=$(tput setf 1)
-textred=$(tput setf 4)
+textblue=$(tput setaf 1)
+textred=$(tput setaf 4)
 textreset=$(tput sgr0)
 # Print script information
 echo ${rev}Arch Linux Installer [Script II - Configuration]${textreset}
