@@ -31,23 +31,6 @@ passwd $AIS_USER
 echo Switching to user $AIS_USER...
 su hersh -c 'cd $HOME && git clone https://github.com/hershsingh/dotfiles.git && $HOME/dotfiles/bootstrap.sh'
 
-# Copy the dotfiles now...
-# ranger
-#   - Copy all the settings
-# awesome
-#   - Minimal or complete? 
-# vim
-#	- Run plugin update
-# git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#   - install plugins
-# conky
-#   - Do I need it here? 
-# bashrc, Xresources
-
-# Setup X
-#   .xinitrc
-#   xmodmap
-
 # AUR
 ai-aur() {
     curl aur.sh > aur.sh
