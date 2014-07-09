@@ -1,5 +1,6 @@
 # Network
 dialog
+wpa_supplicant
 
 # Input
 xf86-input-synaptics
