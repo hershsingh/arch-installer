@@ -93,28 +93,3 @@ mount_internal_ntfs_partition() {
     mount -t ntfs-3g -o uid=$AIS_USER,gid=$AIS_USER,umask=0022 /dev/sda3
 }
 
-# TexLive Network Install
-# Remember that you need to be sudo to install this
-# The idea is to do a minimal install on a USB drive
-ai-texliveinstall() {
-    wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-    if [ ! -d install-tl ]; then 
-        mkdir -p install-tl && tar -C install-tl --strip-components=1 -xvzf install-tl-unx.tar.gz 
-        cd install-tl
-        ./install-tl -profile $DOTFILES/texlive.profile
-        # Check if PATH variable is set
-        if [[ ! ":$PATH:" == *":/usr/local/texlive/2013/bin/i386-linux:"* ]]; then
-            export PATH=$PATH:/usr/local/texlive/2013/bin/i386-linux 
-            echo 'Please add PATH=$PATH:/usr/local/texlive/2013/bin/i386-linux to your .bashrc' 
-        fi
-        # Install base LaTeX
-        tlmgr install latex latex-bin latexconfig latex-fonts
-
-        # Install some interesting packages
-        tlmgr install amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls 
-        
-        # Minted Package, requireds python2-pygments
-        tlmgr install minted fancyvrb float ifplatform
-    fi
-}
-

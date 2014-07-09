@@ -9,7 +9,7 @@ TEXMFLOCAL /usr/local/texlive/texmf-local
 TEXMFSYSCONFIG /usr/local/texlive/2013/texmf-config
 TEXMFSYSVAR /usr/local/texlive/2013/texmf-var
 TEXMFVAR ~/.texlive2013/texmf-var
-binary_i386-linux 1
+binary_x86_64-linux 1
 collection-basic 1
 in_place 0
 option_adjustrepo 1
