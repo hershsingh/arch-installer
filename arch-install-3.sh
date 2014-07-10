@@ -15,16 +15,22 @@ textrev=$(tput rev)
 textblue=$(tput setaf 1)
 textred=$(tput setaf 4)
 textreset=$(tput sgr0)
+note() {
+    echo ${textblue}$@${textreset}
+}
+header() {
+    echo ${textred}$@${textreset}
+}
 
 # Print script information
-echo ${textrev}Arch Linux Installer [Script III - Post Installation]${textreset}
-echo ${textred}It is assumed that the base system has been installed and rebooted once.${textreset}
-echo ${textred}Please ensure that you have a working internet connection. ${textreset}
+header "Arch Linux Installer [Script III - Post Installation]"
+note "It is assumed that the base system has been installed and rebooted once."
+note "Please ensure that you have a working internet connection."
+echo 
 
 # Install all interesting packages
-echo 
-echo ${textblue}Step 1: Interesting Packages ${textreset}
-echo I shall install all the interesting packages now. 
+header "Step 1: Interesting Packages"
+note "I shall install all the interesting packages now."
 read -p "Do you wish to (c)ontinue/(s)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
@@ -35,36 +41,36 @@ fi
 echo
 
 # Setup sudo 
-echo ${textblue}Step 2: Setup sudo${textreset}
-echo I will open sudoers config file for you. You need to allow the wheel group to execute sudo commands.
+header "Step 2: Setup sudo"
+note "I will open \"sudoers\" file for you. You need to allow the wheel group to execute sudo commands."
 read -p "Do you wish to (c)ontinue/(s)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
-	sudo visudo
+	visudo
 fi
 echo
 
 # Users and Groups
 # Setup one main user account.
-echo ${textblue}Step 3: Users and Groups${textreset}
+header "Step 3: Users and Groups"
 AIS_USER=hersh
-echo I will now add the main user $AIS_USER.
+note "I will now add the main user $AIS_USER and make it a member of group \"wheel\"."
 read -p "Do you wish to (c)ontinue/(s)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
-	echo Adding user $AIS_USER...
+	note "Adding user $AIS_USER..."
 	useradd -m -G wheel -s /bin/bash $AIS_USER
-	echo Please enter a password for this user...
+	note "Please enter a password for this user..."
 	passwd $AIS_USER
 fi
 
 ## Switch to $AIS_USER
 ## Setup the dotfiles from a github repository
-echo ${textblue}Step 4: Dotfiles for $AIS_USER ${textreset}
+header "Step 4: Dotfiles for $AIS_USER"
 echo I will get the dotfiles from the github repository and install them. 
 read -p "Do you wish to (c)ontinue/(s)kip/e(x)it? " -n 1 -r
 echo
@@ -75,7 +81,7 @@ elif [[ $REPLY =~ ^[Cc]$ ]] ; then
 	su $AIS_USER -c 'cd $HOME && git clone https://github.com/hershsingh/dotfiles.git && $HOME/dotfiles/bootstrap.sh'
 fi
 
-# AUR
+# Install stuff from AUR
 ai-aur() {
     curl aur.sh > aur.sh
     chmod +x aur.sh
