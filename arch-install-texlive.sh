@@ -34,7 +34,7 @@ ai_texliveinstall() {
         echo 'Please add PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux to your .bashrc' 
     fi
     # Install base LaTeX
-    tlmgr install latex latex-bin latexconfig latex-fonts
+    tlmgr install latex latex-bin latexconfig latex-fonts latexmk
 
     # Install some interesting packages
     tlmgr install amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls 
