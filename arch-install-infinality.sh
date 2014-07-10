@@ -1,6 +1,12 @@
 # Add the infinality-bundle repository.
-#$PACMANCONF=/etc/pacman.conf
-PACMANCONF=newfile
+
+if [[ $EUID != 0 ]]; then
+    echo Please run this script with root access.
+fi
+
+PACMANCONF=/etc/pacman.conf
+
+# Check if pacman.conf already has the infinality repo added to it.
 if grep -qs "Server\s*=\s*http://bohoomil.com/repo/$arch" $PACMANCONF
 then
     echo [infinality-bundle] appears to be in pacman.conf already.
