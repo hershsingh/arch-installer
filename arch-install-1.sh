@@ -15,8 +15,8 @@ AIS_MNT=/mnt
 ## Preamble
 # Define colors for 'tput'
 textrev=$(tput rev)
-textblue=$(tput setaf 1)
-textred=$(tput setaf 4)
+textred=$(tput setaf 1)
+textblue=$(tput setaf 4)
 textreset=$(tput sgr0)
 note() {
     echo ${textblue}$@${textreset}
@@ -25,15 +25,15 @@ header() {
     echo ${textred}$@${textreset}
 }
 
-header Arch Linux Installer [Script I - Base Install]
-note I will assume that you have partitioned the system and mounted the base partition on $AIS_MNT.
+header "Arch Linux Installer [Script I - Base Install]"
+note "I will assume that you have partitioned the system and mounted the base partition on $AIS_MNT."
 echo
 header Checking network...
 if ! ping -c 3 8.8.8.8 ; then
-    note There seems to be some problem with your network. Please ensure that you have a working internet connection and try again.
+    note "There seems to be some problem with your network. Please ensure that you have a working internet connection and try again."
     exit 1
 else
-    note We have a working network. Beginning the install process...
+    note "We have a working network. Beginning the install process..."
 fi
 
 read -p "Do you wish to (C)ontinue/e(x)it? " -n 1 -r
@@ -44,7 +44,7 @@ fi
 echo
 
 # Configure the mirrorlist.
-header Step 1: Configure Mirrorlist
+header "Step 1: Configure Mirrorlist"
 read -p "Do you want to open the mirrorlist now? (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
