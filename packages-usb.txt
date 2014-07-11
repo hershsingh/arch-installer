@@ -26,6 +26,8 @@ ntfs-3g
 # Development
 python
 python2
+ipython
+ipython2
 openssh
 git
 
