@@ -17,11 +17,13 @@ xf86-video-nv
 # lib32-intel-dri
 # lib32-nouveau-dri
 
-# Sys admin stuff
+# System
 base
 base-devel
 sudo
 ntfs-3g
+
+# Development
 python
 python2
 openssh
@@ -32,12 +34,24 @@ xorg-server
 xorg-server-utils
 xorg-xinit
 awesome
+
+# Utilities
 firefox
 zathura
 zathura-pdf-poppler
 zathura-djvu
 rxvt-unicode
 conky
+libreoffice
+gvim
+ranger
+atool
+zip
+unzip
+rsync
+wget
+bc
+imagemagick
 
 # Encryption
 gnupg
@@ -52,15 +66,6 @@ feh
 cmus
 vlc
 
-# Standard stuff
-gvim
-ranger
-atool
-zip
-unzip
-rsync
-wget
-
 # Appearance and Fonts
 gnome-themes-standard
 lxappearance
@@ -68,9 +73,15 @@ lxappearance
 # Automounting
 udevil
 
-# Fonts
+# Fonts (not needed if using infinality-fonts-bundle)
 ttf-inconsolata
 ttf-droid
 
 # TeX
 python-pygments
+
+# Webserver
+lighttpd
+fastcgi
+php
+php-cgi
