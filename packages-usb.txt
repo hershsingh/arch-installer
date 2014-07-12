@@ -73,7 +73,10 @@ gnome-themes-standard
 lxappearance
 
 # Automounting
-udevil
+# udevil
+udiskie
+# libnotify is needed for udiskie
+libnotify 
 
 # Fonts (not needed if using infinality-fonts-bundle)
 ttf-inconsolata
