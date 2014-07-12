@@ -58,6 +58,7 @@ rsync
 wget
 bc
 imagemagick
+w3m 
 
 # Encryption
 gnupg
