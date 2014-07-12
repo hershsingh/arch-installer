@@ -1,3 +1,7 @@
+## Recommended Packages for a fresh Arch Linux install 
+## Author: Hersh Singh [hershdeep@gmail.com]
+## Note: Comments begin with a # (inline comments are allowed)
+
 # Network
 dialog
 wpa_supplicant
