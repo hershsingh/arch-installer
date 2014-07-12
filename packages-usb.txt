@@ -80,15 +80,14 @@ lxappearance
 # Automounting
 # udevil
 udiskie
-# libnotify is needed for udiskie
-libnotify 
+libnotify # libnotify is needed for udiskie
 
 # Fonts (not needed if using infinality-fonts-bundle)
 ttf-inconsolata
 ttf-droid
 
 # TeX
-python-pygments
+python-pygments #for the minted package
 
 # Webserver
 lighttpd
