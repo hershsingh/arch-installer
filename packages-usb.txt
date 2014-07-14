@@ -25,7 +25,8 @@ xf86-video-nv
 base
 base-devel
 sudo
-ntfs-3g
+ntfs-3g # for NTFS partitions
+dosfstools # for FAT partitions
 
 # Development
 python
