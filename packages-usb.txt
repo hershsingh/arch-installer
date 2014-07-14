@@ -59,6 +59,7 @@ wget
 bc
 imagemagick
 w3m 
+gparted
 
 # Encryption
 gnupg
