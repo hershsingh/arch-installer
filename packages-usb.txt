@@ -96,3 +96,6 @@ lighttpd
 fastcgi
 php
 php-cgi
+
+# Privacy
+tor
