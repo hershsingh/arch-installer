@@ -86,7 +86,7 @@ ai-aur() {
     curl aur.sh > aur.sh
     chmod +x aur.sh
     # powerline-fonts-git
-    #  
+    # batterymon-clone
 }
 
 # Mounting Internal Partitions
