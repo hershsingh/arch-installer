@@ -99,3 +99,7 @@ php-cgi
 
 # Privacy
 tor
+
+# Pentesting
+aircrack-ng
+wireshark-gtk
