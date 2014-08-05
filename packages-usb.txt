@@ -78,6 +78,7 @@ vlc
 # Appearance and Fonts
 gnome-themes-standard
 lxappearance
+redshift
 
 # Automounting
 # udevil
