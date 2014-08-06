@@ -61,6 +61,7 @@ bc
 imagemagick
 w3m 
 gparted
+ix
 
 # Encryption
 gnupg
