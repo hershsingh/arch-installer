@@ -95,7 +95,7 @@ python-pygments #for the minted package
 
 # Webserver
 lighttpd
-fastcgi
+fcgi
 php
 php-cgi
 
