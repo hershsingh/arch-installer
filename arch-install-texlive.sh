@@ -38,6 +38,9 @@ ai_texliveinstall() {
 
     # Install some interesting packages
     tlmgr install amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls 
+
+    # Packages required for moderncv
+    tlmgr install moderncv fancyhdr etoolbox l3packages l3kernel
     
     # Minted Package, requireds python2-pygments
     tlmgr install minted fancyvrb float ifplatform
