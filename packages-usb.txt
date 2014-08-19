@@ -28,6 +28,7 @@ sudo
 ntfs-3g # for NTFS partitions
 dosfstools # for FAT partitions
 bash-completion
+ntp # Network Time Protocol - for clock synchronization
 
 # Development
 python
