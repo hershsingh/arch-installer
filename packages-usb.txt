@@ -45,6 +45,7 @@ python2-numpy
 python-scipy
 python2-matplotlib
 python-matplotlib
+python2-unidecode # Required by UltiSnips vim plugin
 
 # X
 xorg-server
@@ -116,6 +117,4 @@ tor
 aircrack-ng
 wireshark-gtk
 
-# Python
-python2-numpy
-python2-scipy
+# vim: ft=conf
