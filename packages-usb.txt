@@ -31,12 +31,20 @@ bash-completion
 ntp # Network Time Protocol - for clock synchronization
 
 # Development
+openssh
+git
+# Python
 python
 python2
 ipython
 ipython2
-openssh
-git
+# Python libraries
+python2-numpy
+python-numpy
+python2-numpy
+python-scipy
+python2-matplotlib
+python-matplotlib
 
 # X
 xorg-server
@@ -107,3 +115,7 @@ tor
 # Pentesting
 aircrack-ng
 wireshark-gtk
+
+# Python
+python2-numpy
+python2-scipy
