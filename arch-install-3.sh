@@ -36,7 +36,7 @@ echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
-	pacman -S $(sed 's/#.*$//' packages-usb.txt)
+	pacman -S $(sed 's/#.*$//' packages.txt)
 fi
 echo
 
