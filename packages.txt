@@ -46,6 +46,11 @@ python-scipy
 python2-matplotlib
 python-matplotlib
 python2-unidecode # Required by UltiSnips vim plugin
+python-jinja # Required by iPython notebook
+python2-jinja # Required by iPython notebook
+python-tornado # Required by iPython notebook
+python2-tornado # Required by iPython notebook
+
 
 # X
 xorg-server
@@ -55,6 +60,7 @@ awesome
 
 # Utilities
 firefox
+flash-player # for firefox
 zathura
 zathura-pdf-poppler
 zathura-djvu
@@ -116,5 +122,10 @@ tor
 # Pentesting
 aircrack-ng
 wireshark-gtk
+
+# Laptop
+#tlp # Power Management for laptops - Problem with suspend
+acpi_call # ThinkPad specific
+acpid   # Handles power management events
 
 # vim: ft=conf
