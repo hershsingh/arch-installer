@@ -33,17 +33,25 @@ ai_texliveinstall() {
         export PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux 
         echo 'Please add PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux to your .bashrc' 
     fi
-    # Install base LaTeX
-    tlmgr install latex latex-bin latexconfig latex-fonts latexmk
 
-    # Install some interesting packages
-    tlmgr install amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls 
+    tex_packages=(
+        # Install base LaTeX
+        latex latex-bin latexconfig latex-fonts latexmk 
 
-    # Packages required for moderncv
-    tlmgr install moderncv fancyhdr etoolbox l3packages l3kernel
-    
-    # Minted Package, requireds python2-pygments
-    tlmgr install minted fancyvrb float ifplatform
+        # Install some interesting packages
+        amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls mathtools
+
+        # Packages required for moderncv
+        moderncv fancyhdr etoolbox l3packages l3kernel
+
+        # Minted Package, requireds python2-pygments
+        minted fancyvrb float ifplatform
+
+        # Young diagrams
+        youngtab
+    )
+    tlmgr install ${tex_packages[@]}
+
 }
 
 echo ${textblue}TexLive Network Install${textreset}
