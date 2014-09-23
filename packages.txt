@@ -70,6 +70,7 @@ libreoffice
 gvim
 ranger
 atool
+unrar
 zip
 unzip
 rsync
