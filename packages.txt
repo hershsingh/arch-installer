@@ -69,10 +69,12 @@ conky
 libreoffice
 gvim
 ranger
+
 atool
 unrar
 zip
 unzip
+
 rsync
 wget
 bc
@@ -81,6 +83,7 @@ w3m
 gparted
 ix
 
+zenity # GUI for shell scripts
 # Encryption
 gnupg
 truecrypt
