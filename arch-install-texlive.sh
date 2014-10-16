@@ -40,6 +40,10 @@ ai_texliveinstall() {
 
         # Install some interesting packages
         amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls mathtools
+        setspace # Line spacing
+
+        # Classes
+        standalone
 
         # Packages required for moderncv
         moderncv fancyhdr etoolbox l3packages l3kernel
@@ -49,6 +53,7 @@ ai_texliveinstall() {
 
         # Young diagrams
         youngtab
+
     )
     tlmgr install ${tex_packages[@]}
 
