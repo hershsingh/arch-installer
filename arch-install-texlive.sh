@@ -42,6 +42,9 @@ ai_texliveinstall() {
         amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls mathtools
         setspace # Line spacing
 
+        # TIkZ
+        tikz-cd
+
         # Classes
         standalone
 
