@@ -13,8 +13,8 @@ then
 else
     echo Adding the [infinality-bundle] repository...
     cat >> $PACMANCONF <<-"EOF"
-    [infinality-bundle]
-    Server = http://bohoomil.com/repo/$arch
+[infinality-bundle]
+Server = http://bohoomil.com/repo/$arch
 EOF
     echo
 fi
@@ -25,8 +25,8 @@ then
 else
     echo Adding the [infinality-bundle-fonts] repository...
     cat >> $PACMANCONF <<-"EOF"
-    [infinality-bundle-fonts]
-    Server = http://bohoomil.com/repo/fonts
+[infinality-bundle-fonts]
+Server = http://bohoomil.com/repo/fonts
 EOF
     echo
 fi
