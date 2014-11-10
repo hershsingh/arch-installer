@@ -2,6 +2,7 @@
 
 if [[ $EUID != 0 ]]; then
     echo Please run this script with root access.
+    exit 1
 fi
 
 PACMANCONF=/etc/pacman.conf
