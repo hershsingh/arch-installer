@@ -72,7 +72,7 @@ gvim # God of all editors
 ranger # God of all file managers
 calibre # Ebook management
 
-atool
+atool # Archive tools
 unrar
 zip
 unzip
@@ -83,7 +83,11 @@ bc
 imagemagick
 w3m 
 gparted
-ix
+highlight # Syntax highlighting
+
+ix # CLI Pastebin
+xclip  # Manage X clipboard 
+
 
 zenity # GUI for shell scripts
 # Encryption
