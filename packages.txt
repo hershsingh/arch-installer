@@ -132,6 +132,7 @@ tor
 # Pentesting
 aircrack-ng
 wireshark-gtk
+netcat
 
 # Laptop
 #tlp # Power Management for laptops - Problem with suspend
