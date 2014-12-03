@@ -42,10 +42,10 @@ ai_texliveinstall() {
         fontspec luaotfload euenc xunicode
 
         # Miscellaneous
-        babel # Internationalization
+        babel       # Internationalization
+        parskip     # Paragraph indent and parskip
         units
         geometry
-        parskip     # Paragraph indent and parskip
         pdftex-def 
 
         # Super-packages
@@ -85,8 +85,8 @@ ai_texliveinstall() {
 
         # Tables
         booktabs    # Prettier tables
-        array   # Make custom columns
-        colortbl  # Color tables
+        array       # Make custom columns
+        colortbl    # Color tables
         multirow    
 
         # Bibliography
@@ -102,8 +102,8 @@ ai_texliveinstall() {
         lm  # Latin modern
         ec  # Computer modern fonts in T1 and TS1 encodings
         bera
-        inconsolata  # Awesome monospace font
-        upquote # Dependency for Inconsolata 
+        inconsolata # Awesome monospace font
+        upquote     # Dependency for Inconsolata 
 
         # Moderncv and dependencies
         moderncv fancyhdr etoolbox l3packages l3kernel
