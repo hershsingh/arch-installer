@@ -40,7 +40,12 @@ ai_texliveinstall() {
 
         # Install some interesting packages
         amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls mathtools
+
         setspace # Line spacing
+
+        # Fonts
+        inconsolata  # Awesome monospace font
+        upquote # Dependency for Inconsolata 
 
         # TIkZ
         tikz-cd
