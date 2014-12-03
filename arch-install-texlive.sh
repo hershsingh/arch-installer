@@ -57,6 +57,9 @@ ai_texliveinstall() {
         # Young diagrams
         youngtab
 
+        # LuaTeX
+        fontspec luaotfload euenc xunicode
+
     )
     tlmgr install ${tex_packages[@]}
 
