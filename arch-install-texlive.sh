@@ -35,36 +35,85 @@ ai_texliveinstall() {
     fi
 
     tex_packages=(
-        # Install base LaTeX
+        # Base LaTeX
         latex latex-bin latexconfig latex-fonts latexmk 
-
-        # Install some interesting packages
-        amsmath amsfonts babel ec geometry graphics hyperref lm  marvosym oberdiek parskip pdftex-def url pgf bera colortbl booktabs mdwlist multirow cite tools mh nicefrac caption mdwtools units xcolor ms amscls mathtools
-
-        setspace # Line spacing
-
-        # Fonts
-        inconsolata  # Awesome monospace font
-        upquote # Dependency for Inconsolata 
-
-        # TIkZ
-        tikz-cd
-
-        # Classes
-        standalone
-
-        # Packages required for moderncv
-        moderncv fancyhdr etoolbox l3packages l3kernel
-
-        # Minted Package, requireds python2-pygments
-        minted fancyvrb float ifplatform
-
-        # Young diagrams
-        youngtab
 
         # LuaTeX
         fontspec luaotfload euenc xunicode
 
+        # Miscellaneous
+        babel # Internationalization
+        units
+        geometry
+        parskip     # Paragraph indent and parskip
+        pdftex-def 
+
+        # Super-packages
+        tools
+        oberdiek
+        mdwtools
+        ms
+        mh  # Contains breqn package
+
+        # Math
+        amsmath amsfonts 
+        mathtools
+        nicefrac 
+
+        # More symbols
+        marvosym 
+
+        # Classes
+        amscls 
+        standalone
+
+        # Lists
+        mdwlist 
+
+        # Cite/Reference
+        url
+        cite
+        hyperref 
+        caption 
+
+        # Graphics 
+        pgf
+        graphics
+        xcolor
+        # TikZ
+        tikz-cd
+
+        # Tables
+        booktabs    # Prettier tables
+        array   # Make custom columns
+        colortbl  # Color tables
+        multirow    
+
+        # Bibliography
+        biber
+
+        # Better typography
+        microtype 
+
+        # Line spacing
+        setspace 
+
+        # Fonts
+        lm  # Latin modern
+        ec  # Computer modern fonts in T1 and TS1 encodings
+        bera
+        inconsolata  # Awesome monospace font
+        upquote # Dependency for Inconsolata 
+
+        # Moderncv and dependencies
+        moderncv fancyhdr etoolbox l3packages l3kernel
+
+        # Source code listings
+        # Minted, requires python2-pygments
+        minted fancyvrb float ifplatform
+
+        # Young diagrams
+        youngtab
     )
     tlmgr install ${tex_packages[@]}
 
