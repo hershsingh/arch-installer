@@ -118,6 +118,9 @@ ai_texliveinstall() {
         # latexdiff
         latexdiff
         ulem
+
+        # beamer
+        beamer
     )
     tlmgr install ${tex_packages[@]}
 
