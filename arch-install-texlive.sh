@@ -1,6 +1,6 @@
 # TexLive Network Install
 # Remember that you NEED TO BE sudo to install this
-# The idea is to do a minimal install on a USB drive
+# The idea is to do a minimal install on a USB drive.
 
 # Check for root access
 if [[ $EUID != 0 ]]; then
@@ -114,6 +114,10 @@ ai_texliveinstall() {
 
         # Young diagrams
         youngtab
+
+        # latexdiff
+        latexdiff
+        ulem
     )
     tlmgr install ${tex_packages[@]}
 
