@@ -30,6 +30,9 @@ dosfstools # for FAT partitions
 bash-completion
 ntp # Network Time Protocol - for clock synchronization
 
+zsh
+zsh-completions
+
 # Development
 openssh
 git
@@ -51,6 +54,9 @@ python2-jinja # Required by iPython notebook
 python-tornado # Required by iPython notebook
 python2-tornado # Required by iPython notebook
 
+# Scientific Computing
+sage-mathematics
+sage-notebook
 
 # X
 xorg-server
@@ -71,6 +77,7 @@ libreoffice
 gvim # God of all editors
 ranger # God of all file managers
 calibre # Ebook management
+units # Unit conversion
 
 atool # Archive tools
 unrar
