@@ -51,6 +51,8 @@ python-matplotlib
 python2-unidecode # Required by UltiSnips vim plugin
 python-jinja # Required by iPython notebook
 python2-jinja # Required by iPython notebook
+python-jsonschema # Required by iPython notebook
+python2-jsonschema # Required by iPython notebook
 python-tornado # Required by iPython notebook
 python2-tornado # Required by iPython notebook
 
