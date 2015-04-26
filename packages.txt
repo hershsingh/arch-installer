@@ -55,6 +55,8 @@ python-jsonschema # Required by iPython notebook
 python2-jsonschema # Required by iPython notebook
 python-tornado # Required by iPython notebook
 python2-tornado # Required by iPython notebook
+python-sympy
+python2-sympy
 
 # Scientific Computing
 sage-mathematics
