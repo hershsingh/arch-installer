@@ -121,6 +121,9 @@ ai_texliveinstall() {
 
         # beamer
         beamer
+
+        # For pandoc
+        adjustbox
     )
     tlmgr install ${tex_packages[@]}
 
