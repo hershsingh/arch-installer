@@ -1,27 +1,30 @@
-## Recommended Packages for a fresh Arch Linux install 
-## Author: Hersh Singh [hershdeep@gmail.com]
-## Note: Comments begin with a # (inline comments are allowed)
+### Recommended Packages for a fresh Arch Linux install 
+### Author: Hersh Singh [hershdeep@gmail.com]
+### Note: Comments begin with a # (inline comments are allowed)
 
-# Network
+## Network
 dialog
 wpa_supplicant
 
-# Input
+## Input
 xf86-input-synaptics
 
-# Video drivers
-xf86-video-vesa
-mesa
-xf86-video-ati
+## Video drivers
+# mesa
+#
+## 64-bit video drivers
 xf86-video-intel
-xf86-video-nouveau
-xf86-video-nv
-# 32-bit video drivers
+# xf86-video-ati
+# xf86-video-vesa
+# xf86-video-nouveau
+# xf86-video-nv
+#
+## 32-bit video drivers
 # lib32-ati-dri
 # lib32-intel-dri
 # lib32-nouveau-dri
 
-# System
+## System
 base
 base-devel
 sudo
@@ -33,57 +36,35 @@ ntp # Network Time Protocol - for clock synchronization
 zsh
 zsh-completions
 
-# Development
+## Development
 openssh
 git
-# Python
+## Python
 python
 python2
 ipython
 ipython2
-# Python libraries
-python2-numpy
-python-numpy
-python2-numpy
-python-scipy
-python2-matplotlib
-python-matplotlib
+# Python packages
 python2-unidecode # Required by UltiSnips vim plugin
-python-jinja # Required by iPython notebook
-python2-jinja # Required by iPython notebook
-python-jsonschema # Required by iPython notebook
-python2-jsonschema # Required by iPython notebook
-python-tornado # Required by iPython notebook
-python2-tornado # Required by iPython notebook
-python-sympy
-python2-sympy
 
-# Scientific Computing
-sage-mathematics
-sage-notebook
-
-# X
+## X
 xorg-server
 xorg-server-utils
 xorg-xinit
 awesome
 
-# Utilities
+## Utilities
 firefox
 flash-player # for firefox
 zathura # Minimalistic pdf reader
 zathura-pdf-poppler
 zathura-djvu
-evince # Another pdf reader
 rxvt-unicode
-conky
-libreoffice
 gvim # God of all editors
 ranger # God of all file managers
-calibre # Ebook management
 units # Unit conversion
-
-atool # Archive tools
+# Archive tools
+atool 
 unrar
 zip
 unzip
@@ -91,63 +72,41 @@ unzip
 rsync
 wget
 bc
-imagemagick
 w3m 
-gparted
 highlight # Syntax highlighting
 
 ix # CLI Pastebin
 xclip  # Manage X clipboard 
 
-
-zenity # GUI for shell scripts
-# Encryption
+## Encryption
 gnupg
-truecrypt
 encfs
 
-#Sound
+##Sound
 alsa-utils
 
-# Multimedia
+## Multimedia
 feh
 cmus
 vlc
 
-# Appearance and Fonts
+## Appearance and Fonts
 gnome-themes-standard
 lxappearance
 redshift
 
-# Automounting
-# udevil
+## Automounting
 udiskie
 libnotify # libnotify is needed for udiskie
 
-# Fonts (not needed if using infinality-fonts-bundle)
-ttf-inconsolata
-ttf-droid
+## Fonts 
+## (not needed if using infinality-fonts-bundle)
+# ttf-inconsolata
+# ttf-droid
 
-# TeX
-python-pygments #for the minted package
-
-# Webserver
-lighttpd
-fcgi
-php
-php-cgi
-
-# Privacy
-tor
-
-# Pentesting
-aircrack-ng
-wireshark-gtk
-openbsd-netcat
-
-# Laptop
-#tlp # Power Management for laptops - Problem with suspend
+## Laptop
+##tlp # Power Management for laptops - Problem with suspend
 acpi_call # ThinkPad specific
 acpid   # Handles power management events
 
-# vim: ft=conf
+## vim: ft=conf
