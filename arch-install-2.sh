@@ -31,7 +31,7 @@ read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
-elif [[ $REPLY =~ ^[Yy]$ ]] ; then
+elif [[ $REPLY =~ ^[Cc]$ ]] ; then
     # Set the correct Locale
     mv /etc/locale.gen /etc/locale.gen.backup
     echo en_US.UTF-8 UTF-8 > /etc/locale.gen
@@ -54,7 +54,7 @@ read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
-elif [[ $REPLY =~ ^[Yy]$ ]] ; then
+elif [[ $REPLY =~ ^[Cc]$ ]] ; then
     note "Setting timezone to $AIS_TIMEZONE..."
     ln -s /usr/share/zoneinfo/$AIS_TIMEZONE /etc/localtime
 fi
@@ -79,7 +79,7 @@ AIS_HOST=dabba
 note "Setting hostname as ${AIS_HOST}..."
 echo $AIS_HOST > /etc/hostname
 note You should add this hostname to /etc/hosts.
-read -p "Do you want to edit /etc/hosts? (y/n) " -n 1 -r
+read -p "Do you want to edit /etc/hosts? (y/N) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -91,7 +91,7 @@ echo
 header "Step 6: Initial Ramdisk Environment"
 note "You may want to edit /etc/mkinitcpio.conf. This is usually not required."
 note "However, if you are installing this on a USB drive, you need to put \"block\" right after \"udev\" in the HOOKS array."
-read -p "Do you want to edit mkinitcpio.conf now? (y/n) " -n 1 -r
+read -p "Do you want to edit mkinitcpio.conf now? (y/N) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -127,7 +127,7 @@ read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
-elif [[ $REPLY =~ ^[Yy]$ ]] ; then
+elif [[ $REPLY =~ ^[Cc]$ ]] ; then
     header Checking network...
     if ! ping -c 3 8.8.8.8 ; then
         note "There seems to be some problem with your network. Please ensure that you have a working internet connection and try again."
