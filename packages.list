@@ -62,6 +62,7 @@ rxvt-unicode
 gvim # God of all editors
 ranger # God of all file managers
 units # Unit conversion
+tmux
 # Archive tools
 atool 
 unrar
