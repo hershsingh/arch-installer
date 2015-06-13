@@ -1,0 +1,112 @@
+### Recommended Packages for a fresh Arch Linux install 
+### Author: Hersh Singh [hershdeep@gmail.com]
+### Note: Comments begin with a # (inline comments are allowed)
+
+## Network
+dialog
+wpa_supplicant
+
+## Input
+xf86-input-synaptics
+
+## Video drivers
+# mesa
+#
+## 64-bit video drivers
+xf86-video-intel
+# xf86-video-ati
+# xf86-video-vesa
+# xf86-video-nouveau
+# xf86-video-nv
+#
+## 32-bit video drivers
+# lib32-ati-dri
+# lib32-intel-dri
+# lib32-nouveau-dri
+
+## System
+base
+base-devel
+sudo
+ntfs-3g # for NTFS partitions
+dosfstools # for FAT partitions
+bash-completion
+ntp # Network Time Protocol - for clock synchronization
+
+zsh
+zsh-completions
+
+## Development
+openssh
+git
+## Python
+python
+python2
+ipython
+ipython2
+# Python packages
+python2-unidecode # Required by UltiSnips vim plugin
+
+## X
+xorg-server
+xorg-server-utils
+xorg-xinit
+awesome
+
+## Utilities
+firefox
+flash-player # for firefox
+zathura # Minimalistic pdf reader
+zathura-pdf-poppler
+zathura-djvu
+rxvt-unicode
+gvim # God of all editors
+ranger # God of all file managers
+units # Unit conversion
+# Archive tools
+atool 
+unrar
+zip
+unzip
+
+rsync
+wget
+bc
+w3m 
+highlight # Syntax highlighting
+
+ix # CLI Pastebin
+xclip  # Manage X clipboard 
+
+## Encryption
+gnupg
+encfs
+
+##Sound
+alsa-utils
+
+## Multimedia
+feh
+cmus
+vlc
+
+## Appearance and Fonts
+gnome-themes-standard
+lxappearance
+redshift
+
+## Automounting
+udiskie
+libnotify # libnotify is needed for udiskie
+
+## Fonts 
+## (not needed if using infinality-fonts-bundle)
+# ttf-inconsolata
+# ttf-droid
+
+## Laptop
+##tlp # Power Management for laptops - Problem with suspend
+acpi_call # ThinkPad specific
+acpid   # Handles power management events
+
+## vim: ft=conf
