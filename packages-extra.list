@@ -1,0 +1,50 @@
+
+## Scientific Computing
+sage-mathematics
+sage-notebook
+# Python packages
+python2-numpy
+python-numpy
+python2-numpy
+python-scipy
+python2-matplotlib
+python-matplotlib
+python-jinja # Required by iPython notebook
+python2-jinja # Required by iPython notebook
+python-jsonschema # Required by iPython notebook
+python2-jsonschema # Required by iPython notebook
+python-tornado # Required by iPython notebook
+python2-tornado # Required by iPython notebook
+python-sympy
+python2-sympy
+
+
+# Utilities
+evince # Another pdf reader
+conky
+libreoffice
+calibre # Ebook management
+imagemagick # Commandline image editing
+gparted
+zenity # GUI for shell scripts
+
+# Encryption
+truecrypt
+
+## TeX
+python-pygments #for the minted package
+
+## Webserver
+lighttpd
+fcgi
+php
+php-cgi
+
+## Privacy
+tor
+
+## Pentesting
+aircrack-ng
+wireshark-gtk
+openbsd-netcat
+# vim: ft=conf
