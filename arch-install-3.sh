@@ -11,6 +11,20 @@
 ## Script configuration
 source arch-install-preamble.sh
 
+# Install all interesting packages
+header "Step 1: Interesting Packages"
+note "I shall install all the interesting packages now."
+read -p "Do you wish to (c)ontinue/(s)kip/e(x)it? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Xx]$ ]] ; then
+	exit
+elif [[ $REPLY =~ ^[Cc]$ ]] ; then
+    (set -x; 
+	pacman -S $(sed 's/#.*$//' packages.list)
+    )
+fi
+echo
+
 # Setup sudo 
 header "Step 2: Setup sudo"
 note "I will open \"sudoers\" file for you. You need to allow the wheel group to execute sudo commands."
