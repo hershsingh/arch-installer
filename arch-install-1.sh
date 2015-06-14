@@ -78,6 +78,12 @@ elif [[ $REPLY =~ ^[Cc]$ ]] ; then
 fi
 echo
 
+# Copy the installer scripts to the new root
+header "Copying the installer scripts to the new root..."
+(set -x; 
+git clone https://github.com/hershsingh/arch-installer /mnt/root/arch-installer
+)
+
 # chroot into the base system
 header "Step 4: Chroot"
 note "We are now ready to chroot into the newly installed system to configure it. "
@@ -87,6 +93,6 @@ echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
-    note Chrooting into the base system...
+    note "Chrooting into the base system..."
     arch-chroot $AIS_MNT /bin/bash
 fi
