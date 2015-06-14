@@ -11,14 +11,12 @@
 #   PATH=$PATH:$(pwd)
 
 # Script Configuration
-AIS_MNT=/mnt
-
 source arch-install-preamble.sh
 
 header "Arch Linux Installer [Script I - Base Install]"
 note "I will assume that you have partitioned the system and mounted the base partition on $AIS_MNT."
 echo
-header Checking network...
+header "Checking network..."
 if ! ping -c 3 8.8.8.8 ; then
     note "There seems to be some problem with your network. Please ensure that you have a working internet connection and try again."
     exit 1
@@ -39,7 +37,9 @@ read -p "Do you want to open the mirrorlist now? (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+    (set -x; 
     $EDITOR /etc/pacman.d/mirrorlist
+    )
 fi
 echo
 
@@ -51,31 +51,37 @@ echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
+    (set -x; 
     pacstrap -i $AIS_MNT base base-devel
+    )
 fi
 echo
 
 # Generate fstab
-header Step 3: Fstab
-note I will now generate fstab for you. 
+header "Step 3: Fstab"
+note "I will now generate fstab for you."
 read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
     note Generating and installing fstab...
+    (set -x; 
     mkdir -p $AIS_MNT/etc
     genfstab -U -p $AIS_MNT >> $AIS_MNT/etc/fstab
+    )
     note "You should check the generated fstab. I am opening it for you."
     read -p "Press any key to continue...  " 
+    (set -x;
     $EDITOR $AIS_MNT/etc/fstab
+    )
 fi
 echo
 
 # chroot into the base system
-header Step 4: Chroot
-note We are now ready to chroot into the newly installed system to configure it. 
-note Please run Part Two of the arch installer script after chrooting.
+header "Step 4: Chroot"
+note "We are now ready to chroot into the newly installed system to configure it. "
+note "Please run Part Two of the arch installer script after chrooting."
 read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
