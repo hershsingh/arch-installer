@@ -4,6 +4,7 @@
 ## Arch Installer Script Configuration
 
 # Global configuration
+AIS_MNT=/mnt
 AIS_TIMEZONE=US/Eastern
 AIS_HOST=dabba
 AIS_USER=hersh
