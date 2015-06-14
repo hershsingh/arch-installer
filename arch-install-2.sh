@@ -1,11 +1,9 @@
 #!/bin/bash
 
 ## Author: Hersh Singh [hershdeep@gmail.com]
-## Date: June 11, 2014
 ## Arch Installer Part #2: System Configuration
 
-
-## Preamble
+# Preamble
 source arch-install-preamble.sh
 
 # Print script information
@@ -23,14 +21,17 @@ echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
+    (set -x; 
+
     # Set the correct Locale
-    mv /etc/locale.gen /etc/locale.gen.backup
-    echo en_US.UTF-8 UTF-8 > /etc/locale.gen
+    mv /etc/locale.gen /etc/locale.gen.backup;
+    echo en_US.UTF-8 UTF-8 > /etc/locale.gen 
 
     # Generate the locale
     locale-gen
     echo LANG=en_US.UTF-8 > /etc/locale.conf
     export LANG=en_US.UTF-8
+    )
 fi
 echo
 
@@ -39,7 +40,6 @@ echo
 
 ## Time zone
 header "Step 2: Time Zone"
-AIS_TIMEZONE=Asia/Calcutta
 note "I will set the time zone to $AIS_TIMEZONE"
 read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
@@ -47,14 +47,18 @@ if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
     note "Setting timezone to $AIS_TIMEZONE..."
+    (set -x; 
     ln -s /usr/share/zoneinfo/$AIS_TIMEZONE /etc/localtime
+    )
 fi
 echo
 
 ## Hardware clock
 header "Step 3: Hardware Clock" 
 note "Setting the Hardware clock to UTC..."
+(set -x;
 hwclock --systohc --utc
+)
 # Use the following for localtime (discouraged, used by Windows)
 # hwclock --systohv --localtime
 echo
@@ -66,7 +70,6 @@ echo
 
 ## Hostname
 header "Step 5: Hostname" 
-AIS_HOST=dabba
 note "Setting hostname as ${AIS_HOST}..."
 echo $AIS_HOST > /etc/hostname
 note You should add this hostname to /etc/hosts.
@@ -74,7 +77,9 @@ read -p "Do you want to edit /etc/hosts? (y/N) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+    (set -x; 
     $EDITOR /etc/hosts
+    )
 fi
 echo
 
@@ -86,15 +91,19 @@ read -p "Do you want to edit mkinitcpio.conf now? (y/N) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+    (set -x; 
     $EDITOR /etc/mkinitcpio.conf
     mkinitcpio -p linux
+    )
 fi
 echo
 
 ## Root password
 header "Step 7: Root Password" 
 note "Please enter a password for the root account."
+(set -x; 
 passwd
+)
 echo
 
 ## Bootloader
