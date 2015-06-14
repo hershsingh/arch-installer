@@ -20,8 +20,8 @@ textreset=$(tput sgr0)
 
 # Functions to display messages
 note() {
-    echo ${textblue}$@${textreset}
+    echo -e "${textblue}$@${textreset}"
 }
 header() {
-    echo ${textred}$@${textreset}
+    echo -e "${textred}$@${textreset}"
 }
