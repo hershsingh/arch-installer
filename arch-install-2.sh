@@ -141,9 +141,16 @@ echo
 
 ###########################
 header "Epilogue"
-note "This may be a good time to install something else too. For instance you may want to ensure that the network would work after rebooting. To make your life easier, install the packages wpa_supplicant and dialog for WiFi."
-note "After you are done, you may proceed to exit from chroot, unmount the newly installed root partition and reboot."
-note "To transform this bare bones installation to an complete and awesome linux system, run the Arch Installer Script III after you reboot." 
+note "
+    This may be a good time to install something else too. 
+    - For instance, you may want to ensure that the network would work after
+    rebooting. 
+    - To make your life easier, install the packages wpa_supplicant and dialog for
+    WiFi.  
+    - After you are done, you may proceed to exit from chroot, unmount the newly
+    installed root partition and reboot.  
+    - To transform this bare bones installation to an complete and awesome linux
+    system, run the Arch Installer Script III after you reboot."
 
 ## Unmount and reboot
 #echo Exiting from chroot environment...
