@@ -19,7 +19,9 @@ echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
-    (visudo)
+    (set -x; 
+    visudo
+    )
 fi
 echo
 
@@ -33,9 +35,13 @@ if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit
 elif [[ $REPLY =~ ^[Cc]$ ]] ; then
 	note "Adding user $AIS_USER..."
-    (useradd -m -G wheel -s /bin/bash $AIS_USER)
+    (set -x; 
+    useradd -m -G wheel -s /bin/bash $AIS_USER
+    )
 	note "Please enter a password for this user..."
-    (passwd $AIS_USER)
+    (set -x; 
+    passwd $AIS_USER
+    )
 fi
 
 ## Switch to $AIS_USER
@@ -59,6 +65,8 @@ read -p "Do you wish to install AUR packages? (y/N)" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    (bash <(curl aur.sh) -si powerline-fonts-git)
+    (set -x;
+    bash <(curl aur.sh) -si powerline-fonts-git
+    )
 fi
 echo
