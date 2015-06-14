@@ -60,7 +60,7 @@ read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
-elif [[ $REPLY =~ ^[Yy]$ ]] ; then
+elif [[ $REPLY =~ ^[Cc]$ ]] ; then
     pacstrap -i $AIS_MNT base base-devel
 fi
 echo
@@ -72,7 +72,7 @@ read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
-elif [[ $REPLY =~ ^[Yy]$ ]] ; then
+elif [[ $REPLY =~ ^[Cc]$ ]] ; then
     note Generating and installing fstab...
     mkdir -p $AIS_MNT/etc
     genfstab -U -p $AIS_MNT >> $AIS_MNT/etc/fstab
@@ -90,7 +90,7 @@ read -p "Do you wish to (c)ontinue/(S)kip/e(x)it? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Xx]$ ]] ; then
 	exit 0
-elif [[ $REPLY =~ ^[Yy]$ ]] ; then
+elif [[ $REPLY =~ ^[Cc]$ ]] ; then
     note Chrooting into the base system...
     arch-chroot $AIS_MNT /bin/bash
 fi
