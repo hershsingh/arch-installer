@@ -10,20 +10,10 @@
 #   If this script is being executed from an arch system with arch-installer-scripts, please add the arch-installer-scripts to $PATH
 #   PATH=$PATH:$(pwd)
 
+# Script Configuration
 AIS_MNT=/mnt
 
-## Preamble
-# Define colors for 'tput'
-textrev=$(tput rev)
-textred=$(tput setaf 1)
-textblue=$(tput setaf 4)
-textreset=$(tput sgr0)
-note() {
-    echo ${textblue}$@${textreset}
-}
-header() {
-    echo ${textred}$@${textreset}
-}
+source arch-install-preamble.sh
 
 header "Arch Linux Installer [Script I - Base Install]"
 note "I will assume that you have partitioned the system and mounted the base partition on $AIS_MNT."

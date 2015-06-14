@@ -4,18 +4,9 @@
 ## Date: June 11, 2014
 ## Arch Installer Part #2: System Configuration
 
+
 ## Preamble
-# Define colors for 'tput'
-textrev=$(tput rev)
-textblue=$(tput setaf 1)
-textred=$(tput setaf 4)
-textreset=$(tput sgr0)
-note() {
-    echo ${textblue}$@${textreset}
-}
-header() {
-    echo ${textred}$@${textreset}
-}
+source arch-install-preamble.sh
 
 # Print script information
 header "Arch Linux Installer [Script II - Configuration]"

@@ -10,35 +10,7 @@
 #   - Network has been configured. 
 
 ## Preamble
-# Define colors for 'tput'
-textrev=$(tput rev)
-textblue=$(tput setaf 1)
-textred=$(tput setaf 4)
-textreset=$(tput sgr0)
-note() {
-    echo ${textblue}$@${textreset}
-}
-header() {
-    echo ${textred}$@${textreset}
-}
-
-# Print script information
-header "Arch Linux Installer [Script III - Post Installation]"
-note "It is assumed that the base system has been installed and rebooted once."
-note "Please ensure that you have a working internet connection."
-echo 
-
-# Install all interesting packages
-header "Step 1: Interesting Packages"
-note "I shall install all the interesting packages now."
-read -p "Do you wish to (c)ontinue/(s)kip/e(x)it? " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Xx]$ ]] ; then
-	exit
-elif [[ $REPLY =~ ^[Cc]$ ]] ; then
-	pacman -S $(sed 's/#.*$//' packages.list)
-fi
-echo
+source arch-install-preamble.sh
 
 # Setup sudo 
 header "Step 2: Setup sudo"
